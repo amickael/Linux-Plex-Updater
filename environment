@@ -1,6 +1,3 @@
 PATH=/opt/linux-plex-updater/venv/bin
 PLEX_USER={{PLEX_USER}}
 PLEX_PASS={{PLEX_PASS}}
-PLEX_HOST=
-PLEX_PORT=
-PLEX_INTERVAL=

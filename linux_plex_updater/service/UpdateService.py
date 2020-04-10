@@ -11,7 +11,11 @@ from linux_plex_updater.api import PlexClient
 
 class UpdateService:
     def __init__(
-        self, username: str, password: str, host: str = "localhost", port: int = 32400
+        self,
+        username: str,
+        password: str,
+        host: str = "http://localhost",
+        port: int = 32400,
     ):
         self.client = PlexClient(username, password, host, port)
 
