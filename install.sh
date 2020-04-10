@@ -43,5 +43,4 @@ sed -i "s/{{PLEX_INTERVAL}}/$poll/g" environment
 
 # Copy unit file, enable, and start
 cp $unit_file /etc/systemd/system
-systemctl enable $unit_file
-systemctl start $unit_file
+systemctl stop $unit_file; enable $unit_file; start $unit_file
