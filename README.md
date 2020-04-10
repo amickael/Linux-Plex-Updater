@@ -2,7 +2,7 @@
 Plex auto-updater for Debian-based systems
 
 ## 🛠️ Installation
-Run the following command
+Run the following command to install or update:
 ```sh
 sudo bash -c "$(curl -sSL https://raw.githubusercontent.com/amickael/Linux-Plex-Updater/master/install.sh?$(date +%s))"
 ```
@@ -24,7 +24,6 @@ nano /opt/linux-plex-updater/config
 | REFRESH_INTERVAL | Update check interval in seconds | 1800
 
 After updating the config file remember to restart the service by running:
-
 ```sh
 sudo systemctl restart linux-plex-updater.service
 ```
