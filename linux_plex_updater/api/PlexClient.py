@@ -28,7 +28,7 @@ class PlexClient:
             with open(cache_file, "r") as f:
                 auth_token = f.read().strip()
             req = requests.get(
-                f"{self.location}/:/prefs", params={"X-Plex-Token": auth_token}
+                f"{self.location}/system", params={"X-Plex-Token": auth_token}
             )
             if req.ok:
                 return auth_token
