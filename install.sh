@@ -26,7 +26,7 @@ rm -r $install_dir; mkdir $install_dir || exit
 cd $install_dir || exit
 
 # Clone code
-git clone https://github.com/amickael/Linux-Plex-Updater.git
+git clone https://github.com/amickael/Linux-Plex-Updater.git .
 
 # Create virtual environment and install requirements
 python3 -m venv venv
