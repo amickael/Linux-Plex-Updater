@@ -7,7 +7,7 @@ apt-get install python3-venv
 install_dir=/opt/linux-plex-updater
 unit_file=linux-plex-updater.service
 read -r -p "Plex username: " plex_user
-read -r -p -s "Plex password: " plex_pass
+read -r -p "Plex password: " plex_pass
 
 
 # Set working dir
@@ -29,4 +29,4 @@ sed -i "s/{{PLEX_PASS}}/$plex_pass/g" environment
 
 # Copy unit file, enable, and start
 cp $unit_file /etc/systemd/system
-systemctl stop $unit_file; enable $unit_file; start $unit_file
+systemctl stop $unit_file; systemctl daemon-reload; enable $unit_file; start $unit_file
