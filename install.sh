@@ -8,21 +8,21 @@ install_dir=/opt/linux-plex-updater
 unit_file=linux-plex-updater.service
 
 echo "Plex username: "
-read -r -p plex_user
+read -r plex_user
 
 echo "Plex password: "
-read -r -p plex_pass
+read -r plex_pass
 
 echo "Plex host [localhost]: "
-read -r -p plex_host
+read -r plex_host
 plex_host=${plex_host:-localhost}
 
 echo "Plex port [32400]: "
-read -r -p plex_port
+read -r plex_port
 plex_port=${plex_port:-32400}
 
 echo "Polling interval (seconds) [1800]: "
-read -r -p poll
+read -r poll
 poll=${poll:-1800}
 
 
