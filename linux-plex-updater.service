@@ -6,8 +6,8 @@ After=Network.target
 [Service]
 User=root
 Group=root
-WorkingDirectory={{CWD}}
-EnvironmentFile={{CWD}}/environment
+WorkingDirectory=/opt/linux-plex-updater
+EnvironmentFile=/opt/linux-plex-updater/environment
 ExecStart=python -m {{CWD}}/linux_plex_updater
 
 [Install]
