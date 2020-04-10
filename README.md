@@ -1,6 +1,11 @@
 # Linux-Plex-Updater
 Plex auto-updater for Debian-based systems
 
+## 👶 Dependencies
+> Note that these are typically pre-installed on most distributions
+* [Python 3.6 or higher](https://www.python.org/downloads/)
+* [Git SCM](https://git-scm.com/downloads)
+
 ## 🛠️ Installation
 Run the following command to install or update:
 ```sh
