@@ -26,7 +26,7 @@ class PlexClient:
         # Check if cached token is still valid
         if os.path.isfile(cache_file):
             with open(cache_file, "r") as f:
-                auth_token = f.read()
+                auth_token = f.read().strip()
             req = requests.get(
                 f"{self.location}/:/prefs", params={"X-Plex-Token": auth_token}
             )
