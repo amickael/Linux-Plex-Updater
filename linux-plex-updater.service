@@ -8,7 +8,7 @@ User=root
 Group=root
 WorkingDirectory=/opt/linux-plex-updater
 EnvironmentFile=/opt/linux-plex-updater/environment
-ExecStart=python -m /opt/linux-plex-updater/linux_plex_updater
+ExecStart=/opt/linux-plex-updater/venv/bin/python -m /opt/linux-plex-updater/linux_plex_updater
 
 [Install]
 WantedBy=multi-user.target
