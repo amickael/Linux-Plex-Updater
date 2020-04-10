@@ -7,17 +7,17 @@ apt-get install python3-venv
 install_dir=/opt/linux-plex-updater
 unit_file=linux-plex-updater.service
 
-read -p -r "Plex username: " plex_user
+read -r -p "Plex username: " plex_user
 
-read -p -r "Plex password: " plex_pass
+read -r -p "Plex password: " plex_pass
 
-read -p -r "Plex host [localhost]: " plex_host
+read -r -p "Plex host [localhost]: " plex_host
 plex_host=${plex_host:-localhost}
 
-read -p -r "Plex port [32400]: " plex_port
+read -r -p "Plex port [32400]: " plex_port
 plex_port=${plex_port:-32400}
 
-read -p -r "Polling interval (seconds) [1800]: " poll
+read -r -p "Polling interval (seconds) [1800]: " poll
 poll=${poll:-1800}
 
 
