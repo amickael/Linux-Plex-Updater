@@ -29,4 +29,4 @@ sed -i "s/{{PLEX_PASS}}/$plex_pass/g" environment
 
 # Copy unit file, enable, and start
 cp $unit_file /etc/systemd/system
-systemctl stop $unit_file; systemctl daemon-reload; enable $unit_file; start $unit_file
+systemctl daemon-reload; systemctl stop $unit_file; systemctl enable $unit_file; systemctl start $unit_file
