@@ -24,8 +24,8 @@ pip install -r requirements.txt
 deactivate
 
 # Write environment
-sed -i "s/{{PLEX_USER}}/$plex_user/g" environment
-sed -i "s/{{PLEX_PASS}}/$plex_pass/g" environment
+sed -i "s/{{PLEX_USER}}/$plex_user/g" config
+sed -i "s/{{PLEX_PASS}}/$plex_pass/g" config
 
 # Copy unit file, enable, and start
 cp $unit_file /etc/systemd/system

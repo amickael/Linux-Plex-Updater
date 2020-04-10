@@ -7,7 +7,7 @@ After=network-online.target
 User=root
 Group=root
 WorkingDirectory=/opt/linux-plex-updater
-EnvironmentFile=/opt/linux-plex-updater/environment
+EnvironmentFile=/opt/linux-plex-updater/config
 ExecStart=/opt/linux-plex-updater/venv/bin/python -m linux_plex_updater
 
 [Install]
