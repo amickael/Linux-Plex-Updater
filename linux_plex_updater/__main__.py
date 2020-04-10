@@ -22,7 +22,7 @@ def main():
     service = UpdateService(**params)
     while True:
         service.install_update()
-        time.sleep(os.getenv("PLEX_INTERVAL", 1800))
+        time.sleep(os.getenv("REFRESH_INTERVAL", 1800))
 
 
 if __name__ == "__main__":
