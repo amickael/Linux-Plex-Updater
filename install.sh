@@ -6,19 +6,8 @@ apt-get install python3-venv
 # Ask and set variables
 install_dir=/opt/linux-plex-updater
 unit_file=linux-plex-updater.service
-
 read -r -p "Plex username: " plex_user
-
-read -r -p "Plex password: " plex_pass
-
-read -r -p "Plex host [http://localhost]: " plex_host
-plex_host=${plex_host:-http://localhost}
-
-read -r -p "Plex port [32400]: " plex_port
-plex_port=${plex_port:-32400}
-
-read -r -p "Polling interval (seconds) [1800]: " poll
-poll=${poll:-1800}
+read -r -p -s "Plex password: " plex_pass
 
 
 # Set working dir
@@ -37,9 +26,6 @@ deactivate
 # Write environment
 sed -i "s/{{PLEX_USER}}/$plex_user/g" environment
 sed -i "s/{{PLEX_PASS}}/$plex_pass/g" environment
-sed -i "s/{{PLEX_HOST}}/$plex_host/g" environment
-sed -i "s/{{PLEX_PORT}}/$plex_port/g" environment
-sed -i "s/{{PLEX_INTERVAL}}/$poll/g" environment
 
 # Copy unit file, enable, and start
 cp $unit_file /etc/systemd/system
