@@ -10,7 +10,7 @@ def main():
     params = {
         "username": os.getenv("PLEX_USER"),
         "password": os.getenv("PLEX_PASS"),
-        "host": os.getenv("PLEX_HOST", "localhost"),
+        "host": os.getenv("PLEX_HOST", "http://localhost"),
         "port": os.getenv("PLEX_PORT", 32400),
     }
     missing_params = [key for key, val in params.items() if val is None]
