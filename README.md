@@ -21,13 +21,13 @@ nano /opt/linux-plex-updater/config
 
 ### Configuration Parameters
 
-| Name | Description | Default |
-| --- | --- | --- |
-| PLEX_USER | Plex.tv username | N/A
-| PLEX_PASS | Plex.tv password | N/A
-| PLEX_HOST | Plex server host | http://localhost
-| PLEX_PORT | Plex server port | 32400
-| REFRESH_INTERVAL | Update check interval in seconds | 1800
+| Name | Description | Type | Default |
+| --- | --- | --- | --- |
+| PLEX_USER | Plex.tv username | String | N/A
+| PLEX_PASS | Plex.tv password | String | N/A
+| PLEX_HOST | Plex server host (must include protocol, e.g. "http://" or "https://") | String | http://localhost
+| PLEX_PORT | Plex server port | Integer | 32400
+| REFRESH_INTERVAL | Update check interval in seconds | Integer | 1800
 
 After updating the config file remember to restart the service by running:
 ```sh
