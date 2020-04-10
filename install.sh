@@ -35,7 +35,7 @@ pip install -r requirements.txt
 deactivate
 
 # Write environment
-sed -i "s/{{CWD}}/$install_dir/g" $unit_file
+sed -i "s/{{CWD}}/$install_dir/g" "$unit_file"
 sed -i "s/{{CWD}}/$install_dir/g" environment
 sed -i "s/{{PLEX_USER}}/$plex_user/g" environment
 sed -i "s/{{PLEX_PASS}}/$plex_pass/g" environment
