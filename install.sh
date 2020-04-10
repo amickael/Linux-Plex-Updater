@@ -4,8 +4,8 @@
 apt-get install python3-venv
 
 # Ask and set variables
-install_dir=/opt/linux-plex-updater
-unit_file=linux-plex-updater.service
+install_dir="/opt/linux-plex-updater"
+unit_file="linux-plex-updater.service"
 
 read -r -p "Plex username: " plex_user
 
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 deactivate
 
 # Write environment
-sed -i "s/{{CWD}}/$install_dir/g" "$unit_file"
+sed -i "s/{{CWD}}/$install_dir/g" $unit_file
 sed -i "s/{{CWD}}/$install_dir/g" environment
 sed -i "s/{{PLEX_USER}}/$plex_user/g" environment
 sed -i "s/{{PLEX_PASS}}/$plex_pass/g" environment
