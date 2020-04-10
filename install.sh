@@ -4,7 +4,7 @@
 apt-get install python3-venv
 
 # Ask and set variables
-install_dir="/opt/linux-plex-updater"
+install_dir=/opt/linux-plex-updater
 unit_file=linux-plex-updater.service
 
 read -r -p "Plex username: " plex_user
