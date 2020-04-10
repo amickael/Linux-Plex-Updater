@@ -11,8 +11,8 @@ read -r -p "Plex username: " plex_user
 
 read -r -p "Plex password: " plex_pass
 
-read -r -p "Plex host [localhost]: " plex_host
-plex_host=${plex_host:-localhost}
+read -r -p "Plex host [http://localhost]: " plex_host
+plex_host=${plex_host:-http://localhost}
 
 read -r -p "Plex port [32400]: " plex_port
 plex_port=${plex_port:-32400}
