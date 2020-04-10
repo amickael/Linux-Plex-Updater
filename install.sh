@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install Python venv
-apt-get install python3-venv
+apt-get -y install python3-venv
 
 # Ask and set variables
 install_dir=/opt/linux-plex-updater
