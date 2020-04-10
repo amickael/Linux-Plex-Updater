@@ -1,0 +1,8 @@
+[Unit]
+Description=Plex auto-updater for Debian-based systems
+Requires=Network.target
+After=Network.target
+
+[Service]
+Type=simple
+ExecStart=
