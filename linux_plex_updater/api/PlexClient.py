@@ -1,7 +1,10 @@
+import os
 import uuid
 import logging
 
 import requests
+
+import linux_plex_updater
 
 
 class PlexClient:
@@ -15,17 +18,37 @@ class PlexClient:
         self.location = f"{host}:{port}"
 
     def login(self) -> str:
+        # Try to load from cache
+        cache_file = os.path.join(
+            os.path.dirname(os.path.abspath(linux_plex_updater.__file__)), ".cache"
+        )
+
+        # Check if cached token is still valid
+        if os.path.isfile(cache_file):
+            with open(cache_file, "r") as f:
+                auth_token = f.read()
+            req = requests.get(
+                f"{self.location}/:/prefs", params={"X-Plex-Token": auth_token}
+            )
+            if req.ok:
+                return auth_token
+
         # Try to fetch auth token
         req = requests.post(
             "https://plex.tv/users/sign_in.json",
-            params={"X-Plex-Client-Identifier": str(self.identifier)},
+            params={
+                "X-Plex-Client-Identifier": str(self.identifier),
+                "X-Plex-Device-Name": "Plex auto-updater",
+            },
             auth=(self.username, self.password),
         )
 
-        # If request is successful set auth token
+        # If request is successful set auth token and cache for later
         if req.ok:
-            response = req.json()
-            return response.get("user", {}).get("authToken")
+            auth_token = req.json().get("user", {}).get("authToken")
+            with open(cache_file, "w") as f:
+                f.write(auth_token)
+            return auth_token
         # Otherwise display an error message
         else:
             status_codes = {401: "Invalid username or password"}

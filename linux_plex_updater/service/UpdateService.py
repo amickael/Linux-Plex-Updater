@@ -40,6 +40,7 @@ class UpdateService:
         if file_path:
             try:
                 subprocess.run(["dpkg", "-i", file_path])
+                os.remove(file_path)
                 return True
             except PermissionError:
                 logging.error("Insufficient permissions")
