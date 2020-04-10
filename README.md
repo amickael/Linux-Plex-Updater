@@ -3,6 +3,7 @@ Plex auto-updater for Debian-based systems
 
 ## 👶 Dependencies
 > Note that these are typically pre-installed on most distributions
+* [systemd](https://systemd.io/)
 * [Python 3.6 or higher](https://www.python.org/downloads/)
 * [Git SCM](https://git-scm.com/downloads)
 
