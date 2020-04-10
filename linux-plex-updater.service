@@ -4,5 +4,11 @@ Requires=Network.target
 After=Network.target
 
 [Service]
-Type=simple
-ExecStart=
+User=root
+Group=root
+WorkingDirectory={{CWD}}
+EnvironmentFile={{CWD}}/environment
+ExecStart=python -m {{CWD}}/linux_plex_updater
+
+[Install]
+WantedBy=multi-user.target
