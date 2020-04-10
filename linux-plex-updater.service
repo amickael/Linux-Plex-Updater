@@ -1,7 +1,7 @@
 [Unit]
 Description=Plex auto-updater for Debian-based systems
-Requires=Network.target
-After=Network.target
+Requires=network-online.target
+After=network-online.target
 
 [Service]
 User=root
