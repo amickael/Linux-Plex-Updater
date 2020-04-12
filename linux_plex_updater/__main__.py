@@ -4,6 +4,13 @@ import logging
 
 from linux_plex_updater.service import UpdateService
 
+# Configure logging
+logging.basicConfig(
+    format="%(asctime)s\t%(levelname)s\t%(message)s",
+    level=logging.INFO,
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
+
 
 def main():
     # Get and check parameters

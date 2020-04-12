@@ -36,12 +36,18 @@ class UpdateService:
             return file_path
 
     def install_update(self) -> bool:
+        logging.info("Attempting to poll updates")
         file_path = self.download_update()
+        logging.info("Successfully polled updates")
         if file_path:
+            logging.info("Update available, attempting to install")
             try:
                 subprocess.run(["dpkg", "-i", file_path])
                 os.remove(file_path)
+                logging.info(f"Successfully installed update at {file_path}")
                 return True
-            except PermissionError:
-                logging.error("Insufficient permissions")
+            except PermissionError as e:
+                logging.error(f"Update failed, insufficient permissions: {str(e)}")
                 return False
+        else:
+            logging.info("No updates available")
